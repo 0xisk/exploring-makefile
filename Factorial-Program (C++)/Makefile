@@ -11,22 +11,22 @@ MYFACE  = ":*)"
 
 # Dependencies
 hello: main.o factorial.o hello.o
-   $(CC) main.o factorial.o hello.o -o hello
+	$(CC) main.o factorial.o hello.o -o hello
 
 main.o: main.cpp functions.h
-   $(CC) -c main.cpp
+	$(CC) -c main.cpp
 
 factorial.o: factorial.cpp functions.h
-   $(CC) -c factorial.cpp
+	$(CC) -c factorial.cpp
 
 hello.o: hello.cpp functions.h
-   $(CC) -c hello.cpp
+	$(CC) -c hello.cpp
 
 clean:
-   -rm *.o *~ core paper
+	-rm *.o *~ core paper
 
 install:
-   @echo You must be root to install
+	@echo You must be root to install
 
 # Special Macros
 # hello: main.cpp hello.cpp factorial.cpp
