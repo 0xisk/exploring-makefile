@@ -28,6 +28,20 @@ clean:
 install:
 	@echo You must be root to install
 
+OBJECTS = main.o hello.o factorial.o
+hello: $(OBJECTS)
+	cc $(OBJECTS) -o hello
+hellp.o: functions.h
+
+main.o: functions.h 
+factorial.o: functions.h 
+
+.SUFFIXES: .foo .bar
+
+.foo.bar:
+	tr '[A-Z][a-z]' '[N-Z][A-M][n-z][a-m]' < $< > $@
+.c.o:
+	$(CC) $(CFLAGS) -c $<
 # Special Macros
 # hello: main.cpp hello.cpp factorial.cpp
 # 	$(cc) $(CFLAGS) $? $(LDFLAGS) -o $@
