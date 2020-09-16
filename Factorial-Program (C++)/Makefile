@@ -14,3 +14,12 @@ Alternatively:
 
 hello: main.cpp hello.cpp factorial.cpp
 	$(cc) $(CFLAGS) $@.cpp $(LDFLAGS) -o $@
+
+# More Special Macros
+.cpp.o:
+	$(cc) $(CFLAGS) -c $<
+
+Alternatively: 
+
+.cpp.o: 
+	$(cc) $(CFLAGS) -c $*.c
